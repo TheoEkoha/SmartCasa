@@ -21,6 +21,7 @@ import { Box } from "@chakra-ui/react";
 import CampaignCreation from "../screens/Apartment/ApartmentCreation";
 import ApartmentCreation from "../screens/Apartment/ApartmentCreation";
 import ApartmentList from "../screens/Apartment/ApartmentList";
+import ApartmentDetails from "../screens/Apartment/ApartmentDetails";
 
 function ProtectedRoute({ children }: { children: React.ReactElement }) {
   const address = isUserConnected();
@@ -75,6 +76,12 @@ const listRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/list",
   component: ApartmentList,
+});
+
+const detailsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/apartments/:id",
+  component: ApartmentDetails,
 });
 
 const dashboardRoute = createRoute({
@@ -141,6 +148,7 @@ export const routeTree = rootRoute.addChildren([
   indexRoute,
   campaignRoute,
   listRoute,
+  detailsRoute,
   aboutRoute,
   dashboardRoute,
   createDigitalCertificationRoute,

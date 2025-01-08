@@ -56,7 +56,6 @@ export const LandingPage = () => {
             Nos propriétés actuellement en vente
           </Text>
         </Box>
-        <CreateApartment />
 
         {/* Section des offres */}
 

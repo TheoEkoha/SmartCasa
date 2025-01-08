@@ -1,5 +1,6 @@
 import React from "react";
 import "./ApartmentCard.css"; // Assurez-vous que le fichier CSS correspond à votre design
+import { Link } from "react-router-dom";
 
 const ApartmentCard = ({ apartment }) => {
   const {
@@ -16,8 +17,15 @@ const ApartmentCard = ({ apartment }) => {
 
   console.log(apartment);
 
+  if (!apartment)
+    return (
+      <div>
+        <h1>Loading..</h1>
+      </div>
+    );
   return (
     <div className="apartment-card">
+      {/* <Link to={`/apartments/${apartment.id}`} className="card-link"> */}
       <div className="card-header">
         <span className="badge">Apartment</span>
         <span className="badge sale">On Sale</span>
@@ -37,6 +45,7 @@ const ApartmentCard = ({ apartment }) => {
       <div className="card-footer">
         <button className="buy-button">Buy Now</button>
       </div>
+      {/* </Link> */}
     </div>
   );
 };
