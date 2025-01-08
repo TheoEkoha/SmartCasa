@@ -51,9 +51,7 @@ const rootRoute = createRootRoute({
       <div>
         <>
           <Outlet />
-          <Box ml={{ base: 0, lg: marginLeft }}>
-            <Footer />
-          </Box>
+          <Box ml={{ base: 0, lg: marginLeft }}>{/* <Footer /> */}</Box>
         </>
       </div>
     );

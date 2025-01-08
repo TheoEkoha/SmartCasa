@@ -67,10 +67,12 @@ const ApartmentList = () => {
   }
 
   return (
-    <div className="apartment-card-container">
-      {apartments.map((apartment) => (
-        <ApartmentCard key={apartment.id} apartment={apartment} />
-      ))}
+    <div>
+      <div className="apartment-card-container">
+        {apartments.map((apartment) => (
+          <ApartmentCard key={apartment.id} apartment={apartment} />
+        ))}
+      </div>
     </div>
   );
 };
